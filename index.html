@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abuhidar LLC — Independent Software Studio</title>
+<meta name="description" content="An independent software studio shipping small, sharp products built to earn.">
+<script src="./support.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { margin: 0; background: #f6f4ef; color: #1c1a17; font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: oklch(0.55 0.13 256 / 0.18); }
+  @keyframes rise { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes floatA { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-40px); } }
+  @keyframes floatB { 0%,100% { transform: translateY(0); } 50% { transform: translateY(36px); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes pulseDot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.7); } }
+  @keyframes cue { 0%,100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(8px); opacity: 1; } }
+  /* scroll-driven reveal where supported; degrades to a normal on-load animation otherwise */
+  /* Reset-immune reveals: progress is tied to scroll position (view timeline),
+     so the framework's re-render loop can't reset them mid-flight. */
+  @supports (animation-timeline: view()) {
+    .rv-scroll { animation: rise 1ms linear both; animation-timeline: view(); animation-range: entry 2% cover 26%; }
+    .rv-hero { animation: rise 1ms linear both; animation-timeline: view(); animation-range: entry 0% entry 1%; }
+  }
+  @supports not (animation-timeline: view()) {
+    .rv-scroll, .rv-hero { animation: rise 0.9s cubic-bezier(.22,1,.36,1) both; }
+  }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="min-height:100vh; overflow:hidden; position:relative;">
+
+  <nav ref="{{ navRef }}" style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:20px 40px; border-bottom:1px solid rgba(28,26,23,0); transition:background .5s ease, border-color .5s ease, backdrop-filter .5s ease;">
+    <a href="#top" style="text-decoration:none; color:#1c1a17; font-family:'Instrument Serif',serif; font-size:24px; letter-spacing:0.2px;">Abuhidar<span style="color:oklch(0.55 0.13 256);">.</span></a>
+    <div style="display:flex; align-items:center; gap:34px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase;">
+      <a href="#projects" style="text-decoration:none; color:#797268; transition:color .3s;" style-hover="color:#1c1a17;">Projects</a>
+      <a href="#about" style="text-decoration:none; color:#797268; transition:color .3s;" style-hover="color:#1c1a17;">About</a>
+      <a href="#contact" style="text-decoration:none; color:#797268; transition:color .3s;" style-hover="color:#1c1a17;">Contact</a>
+    </div>
+  </nav>
+
+  <section id="top" style="position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:120px 40px 80px; max-width:1280px; margin:0 auto;">
+    <div data-orb style="position:absolute; top:8%; right:6%; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle at 30% 30%, oklch(0.7 0.12 256 / 0.5), transparent 65%); filter:blur(40px); animation:floatA 14s ease-in-out infinite; pointer-events:none; z-index:0;"></div>
+    <div data-orb style="position:absolute; bottom:10%; left:2%; width:380px; height:380px; border-radius:50%; background:radial-gradient(circle at 50% 50%, oklch(0.82 0.07 70 / 0.55), transparent 65%); filter:blur(48px); animation:floatB 17s ease-in-out infinite; pointer-events:none; z-index:0;"></div>
+
+    <div style="position:relative; z-index:1;">
+      <div class="rv-hero" style="animation-delay:.05s; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#797268; margin-bottom:32px; display:flex; align-items:center; gap:12px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:oklch(0.55 0.13 256); display:inline-block;"></span>
+        Abuhidar LLC — Independent Software Studio
+      </div>
+
+      <h1 style="margin:0; font-family:'Instrument Serif',serif; font-weight:400; line-height:0.98; letter-spacing:-1.5px; font-size:clamp(52px, 9vw, 132px);">
+        <span class="rv-hero" style="display:block; animation-delay:.12s;">We build</span>
+        <span class="rv-hero" style="display:block; animation-delay:.24s;"><em style="font-style:italic; color:oklch(0.5 0.12 256);">profitable</em> SaaS</span>
+        <span class="rv-hero" style="display:block; animation-delay:.36s;">from scratch.</span>
+      </h1>
+
+      <p class="rv-hero" style="animation-delay:.55s; max-width:520px; margin:38px 0 0; font-size:19px; line-height:1.6; font-weight:300; color:#4a463f;">
+        An independent software studio shipping small, sharp products built to earn. Two are on the way.
+      </p>
+
+      <div class="rv-hero" style="animation-delay:.7s; display:flex; flex-wrap:wrap; gap:16px; margin-top:44px;">
+        <a href="#projects" style="text-decoration:none; background:#1c1a17; color:#f6f4ef; padding:15px 28px; border-radius:100px; font-size:14px; font-weight:500; letter-spacing:0.3px; transition:transform .4s cubic-bezier(.22,1,.36,1), background .3s;" style-hover="transform:translateY(-3px); background:oklch(0.4 0.1 256);">See what's coming</a>
+        <a href="#contact" style="text-decoration:none; color:#1c1a17; padding:15px 28px; border-radius:100px; font-size:14px; font-weight:500; letter-spacing:0.3px; border:1px solid rgba(28,26,23,0.18); transition:transform .4s cubic-bezier(.22,1,.36,1), border-color .3s;" style-hover="transform:translateY(-3px); border-color:#1c1a17;">Get in touch</a>
+      </div>
+    </div>
+
+    <div style="position:absolute; bottom:36px; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:2px; color:#797268; display:flex; flex-direction:column; align-items:center; gap:8px;">
+      <span>SCROLL</span>
+      <span style="animation:cue 1.8s ease-in-out infinite;">↓</span>
+    </div>
+  </section>
+
+  <div style="border-top:1px solid rgba(28,26,23,0.08); border-bottom:1px solid rgba(28,26,23,0.08); overflow:hidden; padding:18px 0; background:#f1eee7;">
+    <div style="display:flex; width:max-content; animation:marquee 32s linear infinite; font-family:'Instrument Serif',serif; font-size:26px; color:rgba(28,26,23,0.32); white-space:nowrap;">
+      <span style="padding:0 28px;">Independent</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span><span style="padding:0 28px;">Software</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span><span style="padding:0 28px;">Built to earn</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span><span style="padding:0 28px;">Ship small</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span>
+      <span style="padding:0 28px;">Independent</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span><span style="padding:0 28px;">Software</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span><span style="padding:0 28px;">Built to earn</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span><span style="padding:0 28px;">Ship small</span><span style="padding:0 28px; color:oklch(0.6 0.13 256 / 0.55);">·</span>
+    </div>
+  </div>
+
+  <section id="projects" style="max-width:1280px; margin:0 auto; padding:120px 40px 60px;">
+    <div class="rv-scroll" style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:64px;">
+      <h2 style="margin:0; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(34px,5vw,56px); letter-spacing:-0.5px;">Projects</h2>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#797268;">Two in the works · 2026</span>
+    </div>
+
+    <article class="rv-scroll" style="display:grid; grid-template-columns:1.05fr 1fr; gap:48px; align-items:center; padding-bottom:72px; margin-bottom:72px; border-bottom:1px solid rgba(28,26,23,0.1);">
+      <div>
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#797268;">01</span>
+          <span style="display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.5 0.12 256); border:1px solid oklch(0.55 0.13 256 / 0.3); padding:5px 11px; border-radius:100px;">
+            <span style="width:6px; height:6px; border-radius:50%; background:oklch(0.55 0.13 256); animation:pulseDot 2s ease-in-out infinite;"></span>Coming soon
+          </span>
+        </div>
+        <h3 style="margin:0; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(36px,4.5vw,58px); line-height:1.02; letter-spacing:-0.5px;">paytree<span style="color:oklch(0.55 0.13 256);">.to</span></h3>
+        <p style="margin:20px 0 0; font-size:18px; line-height:1.65; font-weight:300; color:#4a463f; max-width:440px;">Link in bio, reimagined. A single page packed with the features creators actually want — built to convert, not just collect clicks.</p>
+        <a href="https://paytree.to" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; margin-top:28px; text-decoration:none; color:#1c1a17; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:1px; text-transform:uppercase; border-bottom:1px solid rgba(28,26,23,0.2); padding-bottom:4px; transition:border-color .3s, gap .3s;" style-hover="border-color:#1c1a17; gap:14px;">paytree.to <span>↗</span></a>
+      </div>
+      <div style="aspect-ratio:4/3; border-radius:8px; border:1px solid rgba(28,26,23,0.1); background:repeating-linear-gradient(45deg, #efece4, #efece4 11px, #eae6dd 11px, #eae6dd 22px); display:flex; align-items:center; justify-content:center; transition:transform .6s cubic-bezier(.22,1,.36,1);" style-hover="transform:translateY(-6px);">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1px; color:#8c8478; background:#f6f4ef; padding:7px 13px; border-radius:4px;">paytree.to · product preview</span>
+      </div>
+    </article>
+
+    <article class="rv-scroll" style="display:grid; grid-template-columns:1.05fr 1fr; gap:48px; align-items:center;">
+      <div>
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#797268;">02</span>
+          <span style="display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.5 0.12 256); border:1px solid oklch(0.55 0.13 256 / 0.3); padding:5px 11px; border-radius:100px;">
+            <span style="width:6px; height:6px; border-radius:50%; background:oklch(0.55 0.13 256); animation:pulseDot 2s ease-in-out infinite;"></span>Coming soon
+          </span>
+        </div>
+        <h3 style="margin:0; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(36px,4.5vw,58px); line-height:1.02; letter-spacing:-0.5px;">Grain</h3>
+        <p style="margin:20px 0 0; font-size:18px; line-height:1.65; font-weight:300; color:#4a463f; max-width:440px;">A new app, taking shape. We're keeping the details quiet for now — more soon.</p>
+        <span style="display:inline-flex; align-items:center; gap:8px; margin-top:28px; color:#797268; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:1px; text-transform:uppercase;">In development</span>
+      </div>
+      <div style="aspect-ratio:4/3; border-radius:8px; border:1px solid rgba(28,26,23,0.1); background:repeating-linear-gradient(45deg, #efece4, #efece4 11px, #eae6dd 11px, #eae6dd 22px); display:flex; align-items:center; justify-content:center; transition:transform .6s cubic-bezier(.22,1,.36,1);" style-hover="transform:translateY(-6px);">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1px; color:#8c8478; background:#f6f4ef; padding:7px 13px; border-radius:4px;">Grain · app preview</span>
+      </div>
+    </article>
+  </section>
+
+  <section id="about" style="background:#f1eee7; border-top:1px solid rgba(28,26,23,0.08); border-bottom:1px solid rgba(28,26,23,0.08); padding:130px 0; margin-top:80px;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 40px;">
+      <span class="rv-scroll" style="display:inline-block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#797268;">About</span>
+      <p class="rv-scroll" style="margin:28px 0 0; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,46px); line-height:1.28; letter-spacing:-0.5px; color:#1c1a17;">
+        Abuhidar LLC is a one-person software studio. We chase good SaaS ideas, build them lean, and ship products designed to <em style="font-style:italic; color:oklch(0.5 0.12 256);">earn their keep</em> — no bloat, no busywork.
+      </p>
+      <div class="rv-scroll" style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:64px;">
+        <div style="border-top:1px solid rgba(28,26,23,0.15); padding-top:18px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:oklch(0.5 0.12 256); letter-spacing:1px;">01</span><p style="margin:10px 0 0; font-size:16px; font-weight:300; color:#4a463f; line-height:1.55;">Ship small, focused products.</p></div>
+        <div style="border-top:1px solid rgba(28,26,23,0.15); padding-top:18px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:oklch(0.5 0.12 256); letter-spacing:1px;">02</span><p style="margin:10px 0 0; font-size:16px; font-weight:300; color:#4a463f; line-height:1.55;">Charge fairly, build for profit.</p></div>
+        <div style="border-top:1px solid rgba(28,26,23,0.15); padding-top:18px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:oklch(0.5 0.12 256); letter-spacing:1px;">03</span><p style="margin:10px 0 0; font-size:16px; font-weight:300; color:#4a463f; line-height:1.55;">Sweat the details that matter.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="max-width:1280px; margin:0 auto; padding:140px 40px 120px; position:relative;">
+    <div data-orb style="position:absolute; top:20%; right:10%; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle at 40% 40%, oklch(0.72 0.11 256 / 0.4), transparent 65%); filter:blur(50px); animation:floatA 16s ease-in-out infinite; pointer-events:none; z-index:0;"></div>
+    <div style="position:relative; z-index:1; max-width:760px;">
+      <span class="rv-scroll" style="display:inline-block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#797268;">Contact</span>
+      <h2 class="rv-scroll" style="margin:24px 0 0; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(48px,8vw,104px); line-height:0.98; letter-spacing:-1.5px;">Let's <em style="font-style:italic; color:oklch(0.5 0.12 256);">talk</em>.</h2>
+      <p class="rv-scroll" style="margin:32px 0 0; font-size:19px; font-weight:300; color:#4a463f; line-height:1.6; max-width:480px;">Working on something, want early access, or just want to say hi? Reach out.</p>
+      <div class="rv-scroll" style="display:flex; flex-direction:column; gap:2px; margin-top:48px;">
+        <a href="{{ emailHref }}" style="text-decoration:none; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 4px; border-top:1px solid rgba(28,26,23,0.14); color:#1c1a17; transition:padding-left .4s cubic-bezier(.22,1,.36,1);" style-hover="padding-left:16px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#797268;">Email</span>
+          <span style="font-family:'Instrument Serif',serif; font-size:clamp(20px,2.6vw,30px);">{{ emailText }}</span>
+        </a>
+        <a href="https://instagram.com/kindi_711" target="_blank" rel="noopener" style="text-decoration:none; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 4px; border-top:1px solid rgba(28,26,23,0.14); border-bottom:1px solid rgba(28,26,23,0.14); color:#1c1a17; transition:padding-left .4s cubic-bezier(.22,1,.36,1);" style-hover="padding-left:16px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#797268;">Instagram</span>
+          <span style="font-family:'Instrument Serif',serif; font-size:clamp(20px,2.6vw,30px);">@kindi_711</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(28,26,23,0.08); padding:40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+    <span style="font-family:'Instrument Serif',serif; font-size:22px;">Abuhidar<span style="color:oklch(0.55 0.13 256);">.</span></span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1px; color:#797268;">© {{ year }} Abuhidar LLC — All rights reserved</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  navRef = React.createRef();
+  rootRef = React.createRef();
+
+  componentDidMount() {
+    const root = (this.rootRef && this.rootRef.current) || document;
+
+    // Nav background on scroll
+    const nav = (this.navRef && this.navRef.current) || document.querySelector('nav');
+    this._onScroll = () => {
+      const scrolled = window.scrollY > 24;
+      if (!nav) return;
+      nav.style.background = scrolled ? 'rgba(246,244,239,0.78)' : 'rgba(246,244,239,0)';
+      nav.style.borderBottomColor = scrolled ? 'rgba(28,26,23,0.08)' : 'rgba(28,26,23,0)';
+      nav.style.backdropFilter = scrolled ? 'blur(14px)' : 'none';
+      nav.style.webkitBackdropFilter = scrolled ? 'blur(14px)' : 'none';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    // Mouse parallax on ambient orbs
+    const orbs = root.querySelectorAll('[data-orb]');
+    this._onMove = (ev) => {
+      const cx = ev.clientX / window.innerWidth - 0.5;
+      const cy = ev.clientY / window.innerHeight - 0.5;
+      orbs.forEach((o, i) => {
+        const f = (i % 3 + 1) * 22;
+        o.style.translate = `${cx * f}px ${cy * f}px`;
+      });
+    };
+    window.addEventListener('mousemove', this._onMove, { passive: true });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('mousemove', this._onMove);
+  }
+
+  renderVals() {
+    // Compose from parts so CDN email scanners can't detect/rewrite the literal address.
+    const user = 'mohammadalkindi711';
+    const domain = 'icloud' + '.com';
+    const emailText = user + '@' + domain;
+    return {
+      year: new Date().getFullYear(),
+      navRef: this.navRef,
+      rootRef: this.rootRef,
+      emailText,
+      emailHref: 'mailto:' + emailText,
+    };
+  }
+}
+</script>
+</body>
+</html>
